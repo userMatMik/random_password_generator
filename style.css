@@ -1,0 +1,263 @@
+/* -----Variables---- */
+/* Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General styles */
+body {
+  font-family: 'Karla', sans-serif;
+  background-color: #1C1C1C;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+/* Inputs Styles */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #10B981;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 0.15em;
+  -webkit-transform: translateY(-0.075em);
+          transform: translateY(-0.075em);
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms transform ease-in-out;
+  transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+  -webkit-box-shadow: inset 1em 1em #ffffff;
+          box-shadow: inset 1em 1em #ffffff;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+input[type="number"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #10B981;
+  color: #ffffff;
+  margin: 0;
+  font: inherit;
+  width: 3.15em;
+  height: 1.5em;
+  border: none;
+  border-radius: 0.15em;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Typhography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.hero__text {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.password {
+  font-size: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Main styles */
+.app {
+  background-color: #ECFDF5;
+  max-width: 550px;
+  padding: 80px 40px;
+}
+
+.hero__title {
+  color: #2B283A;
+}
+
+.hero__title--second-line {
+  color: #10B981;
+}
+
+.hero__text {
+  color: #6B7280;
+  margin-top: 10px;
+}
+
+.input {
+  border-top: 1px solid #D5D4D8;
+  border-bottom: 1px solid #D5D4D8;
+  margin-block: 20px;
+  padding-block: 20px;
+}
+
+.input__options {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+}
+
+.input__option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.input label {
+  color: #6B7280;
+  margin-right: 15px;
+}
+
+.btn {
+  margin-top: 40px;
+  color: #ffffff;
+  border: none;
+  background-color: #10B981;
+  padding: 10px 15px;
+  border-radius: 5px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.output {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.password {
+  position: relative;
+  color: #5DEF92;
+  background-color: #273549;
+  padding: 10px 40px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.password:hover::after {
+  content: 'Copy';
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #ffffff;
+  position: absolute;
+  right: 5px;
+  -webkit-transform: translateY(10%);
+          transform: translateY(10%);
+}
+/*# sourceMappingURL=style.css.map */

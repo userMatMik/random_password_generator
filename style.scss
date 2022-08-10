@@ -1,0 +1,269 @@
+// :root {
+
+    /* -----Variables---- */
+
+    $primary-clr: #10B981;
+    $secondary-clr: #2B283A;
+    $bkg-clr: #ECFDF5;
+    $password-clr: #273549;
+    $password-text-clr: #5DEF92;
+    $text-primary: #6B7280;
+    $splitter-clr: #D5D4D8;
+    $white-clr: #ffffff;
+
+    $border-rad: 5px;
+
+// }
+
+
+
+/* Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General styles */
+
+body { 
+    font-family: 'Karla', sans-serif;
+    background-color: #1C1C1C;
+    display: grid;
+    place-items: center;
+}
+
+/* Inputs Styles */
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: $primary-clr;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+
+    &::before {
+        
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em $white-clr;
+
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+                 
+    }
+    &:checked::before {
+        transform: scale(1);
+    }
+}
+
+input[type="number"] {
+    appearance: none;
+    background-color: $primary-clr;
+    color: $white-clr;
+    margin: 0;
+    font: inherit;
+    width: 3.15em;
+    height: 1.5em;
+    border: none;
+    border-radius: 0.15em;
+    text-align: center;
+    font-weight: 500;
+
+}
+
+/* Typhography */
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.hero__text {
+    font-size: 1.25rem;
+    font-weight: 400;  
+}
+
+.password {
+    font-size: 1rem;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Main styles */
+
+.app {
+    background-color: $bkg-clr;
+    max-width: 550px;
+    padding: 80px 40px;
+}
+
+
+.hero {
+
+    &__title {
+        color: $secondary-clr;
+
+        &--second-line{
+            color: $primary-clr;
+        }
+    }
+
+    &__text {
+        color: $text-primary;
+        margin-top: 10px;
+    }
+}
+
+.input {
+    border-top: 1px solid $splitter-clr;
+    border-bottom: 1px solid $splitter-clr;
+    margin-block: 20px;
+    padding-block: 20px ;
+    
+    &__options {
+        display: grid;
+        gap: 10px;
+    }
+
+    &__option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    label {
+        color: $text-primary;
+        margin-right: 15px;;
+    }
+}
+
+.btn {
+    margin-top: 40px;;
+    color: $white-clr;
+    border: none;
+    background-color: $primary-clr;
+    padding: 10px 15px;
+    border-radius: $border-rad;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.output {
+    display: grid;
+    place-items: center;
+}
+
+.password {
+    position: relative;
+    color: $password-text-clr;
+    background-color: $password-clr;
+    padding: 10px 40px;
+    border-radius: $border-rad;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover::after {
+        content: 'Copy';
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: $white-clr;
+        position: absolute;
+        right: 5px;
+        transform: translateY(10%);
+    }
+}
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Random Password Generator</title>
+</head>
+<body>
+
+    <div class="app">
+        <div class="hero">
+            <h1 class="hero__title">Generate a <br><span class="hero__title--second-line">random password</span></h1>
+            <p class="hero__text">Never use an insecure password again.</p>
+        </div>
+        <div class="generator">
+            <div class="input">
+                <div class="input__options">
+                    <div class="input__option">
+                        <label for="len">Password Length</label>
+                        <input id="len" value="15" type="number" min="5" max="30" />
+                    </div>
+                    <div class="input__option">
+                        <label for="upper">Contain uppercase letters</label>
+                        <input id="upper" type="checkbox" checked />
+                    </div>
+                    <div class="input__option">
+                        <label for="lower">Contain lowercase Letters</label>
+                        <input id="lower" type="checkbox" checked />
+                    </div>
+                    <div class="input__option">
+                        <label for="number">Contain numbers</label>
+                        <input id="number" type="checkbox" checked />
+                    </div>
+                    <div class="input__option">
+                        <label for="special">Contain special characters</label>
+                        <input id="special" type="checkbox" checked />
+                    </div>
+                </div>
+                <button id="generate-pswd" class="btn">Generate password</button>
+
+            </div>
+        </div>
+        <div class="output">
+            <div class="password" id="password"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
